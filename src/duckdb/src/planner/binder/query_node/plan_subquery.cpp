@@ -369,6 +369,8 @@ static unique_ptr<Expression> PlanCorrelatedSubquery(Binder &binder, BoundSubque
 	}
 }
 
+RecursiveDependentJoinPlanner::~RecursiveDependentJoinPlanner() = default;
+
 void RecursiveDependentJoinPlanner::VisitOperator(LogicalOperator &op) {
 	if (!op.children.empty()) {
 		// Collect all recursive CTEs during recursive descend
