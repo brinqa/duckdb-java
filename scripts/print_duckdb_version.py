@@ -5,7 +5,7 @@ import re
 from os import path
 import sys
 
-version_regex = re.compile(r"""^\#define DUCKDB_SOURCE_ID "([a-z0-9]+)"$""")
+version_regex = re.compile(r"""^\#define DUCKDB_SOURCE_ID "([a-z0-9.]+)"$""")
 
 project_dir = path.dirname(path.dirname(path.abspath(__file__)))
 pragma_version_path = path.join(project_dir, "src/duckdb/src/function/table/version/pragma_version.cpp")
